@@ -54,10 +54,12 @@ table {
 */
 
 body {
-  color: #888;
-  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-image: url("https://images.unsplash.com/Ys-DBJeX0nE.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
-  background-repeat: no-repeat;
+  color: #FEFEFE;
+}
+
+header {
+  font-size: 112px;
+  color: #FEFEFE;
 }
 
 .hero-image {
@@ -67,4 +69,14 @@ body {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.awesome-font {
+ font-family: 'Lora', serif;
+}
+
+.general-font {
+  font-family: 'Montserrat', sans-serif;
+ font-weight: 300;
+ text-transform: uppercase;
 }
