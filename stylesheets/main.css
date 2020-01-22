@@ -55,6 +55,7 @@ table {
 
 body {
   color: #FEFEFE;
+  text-align: center;
 }
 
 header {
@@ -69,6 +70,11 @@ header {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .awesome-font {
@@ -78,5 +84,28 @@ header {
 .general-font {
   font-family: 'Montserrat', sans-serif;
  font-weight: 300;
- text-transform: uppercase;
+}
+
+.bordered {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 400px;
+  margin-left: 400px;
+
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding bottom: 10px;
+
+  background-color: rgb(61, 103, 151, 0.7);
+  border-top: 4px solid rgb(33, 41, 117, 0.8);
+  border-right: 4px solid rgb(33, 41, 117, 0.8);
+  border-left: 4px solid rgb(33, 41, 117, 0.8);
+  border-bottom: 4px solid rgb(33, 41, 117, 0.8);
+
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
 }
