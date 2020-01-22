@@ -11,11 +11,9 @@
   </head>
 
   <body class="hero-image general-font">
-    <header class = "awesome-font">
-      <h1>Twiddler</h1>
-    </header>
+    <header>Twiddler</header>
 
-    <button type="button" class="btn btn-alt awesome-font">Show New Tweets</button>
+    <button type="button" class="btn">Show New Tweets</button>
 
     <script>
 
@@ -25,8 +23,8 @@
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div class="bordered">');
-          var $tweetTime = $('<p>');
+          var $tweet = $('<div class="container">');
+          var $tweetTime = $('<h1>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
           $tweetTime.text(tweet.created_at);
           $tweet.appendTo($body);

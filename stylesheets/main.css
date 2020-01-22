@@ -57,7 +57,7 @@ body {
   text-align: center;
 }
 
-p {
+h1 {
   font-size: 14px;
   text-align: left;
   padding-left: 15px;
@@ -66,7 +66,8 @@ p {
 
 header {
   font-size: 112px;
-  color: #FEFEFE;
+  font-family: 'Lora', serif;
+  color: white;
 }
 
 /*
@@ -96,17 +97,6 @@ header {
   ========================================
 */
 
-.awesome-font {
- font-family: 'Lora', serif;
- color: white;
-}
-
-.general-font {
-  font-family: 'Montserrat', sans-serif;
- font-weight: 300;
- color: white;
-}
-
 
 /*
   ========================================
@@ -114,7 +104,7 @@ header {
   ========================================
 */
 
-.bordered {
+.container {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-right: 400px;
@@ -133,6 +123,9 @@ header {
 
   font-size: 30px;
   font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: white;
   letter-spacing: .5px;
   line-height: 44px;
   padding: 40px 0 22px 0;
@@ -146,12 +139,13 @@ header {
 
 .btn {
   border-radius: 5px solid rgb(33, 41, 117, 0.8);
+  border: 1px solid (33, 41, 117, 0.8);
+  background-color: rgb(61, 103, 151, 0.7);
+  padding: 10px 30px;
+  
+  font-size: 17px;
+  font-family: 'Lora', serif;
+  color: white;
   display: inline-block;
   margin: 0;
-  background-color: rgb(61, 103, 151, 0.7);
-}
-.btn-alt {
-  font-size: 17px;
-  border: 1px solid (33, 41, 117, 0.8);
-  padding: 10px 30px;
 }
