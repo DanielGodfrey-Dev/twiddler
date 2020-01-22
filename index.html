@@ -13,24 +13,52 @@
   <body class="hero-image general-font">
     <header>Twiddler</header>
 
-    <button type="button" class="btn">Show New Tweets</button>
+    <button id="tweetButton" type="button" class="btn">Show New Tweets</button>
 
     <script>
 
       $(document).ready(function(){
         var $body = $('body');
 
+//________original batch of tweets on user homepage______________
+
         var index = streams.home.length - 1;
+
         while(index >= 0){
           var tweet = streams.home[index];
+          
           var $tweet = $('<div class="container">');
           var $tweetTime = $('<h1>');
+
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
           $tweetTime.text(tweet.created_at);
           $tweet.appendTo($body);
           $tweetTime.appendTo($tweet);
+
           index -= 1;
         }
+//_______________________________________________________________
+
+
+//________generates new tweet on homepage________________________
+
+        var $tweetButton = $('#tweetButton');
+        
+        $tweetButton.click(function() {
+          generateRandomTweet();
+          
+          var newTweet = streams.home.pop();
+
+          var $newTweet = $('<div class="container">');
+          var $newtweetTime = $('<h1>');
+
+          $newTweet.text('@' + newTweet.user + ': ' + newTweet.message);
+          $newtweetTime.text(newTweet.created_at);
+          $newTweet.appendTo($body);
+          $newtweetTime.appendTo($newTweet);
+        });
+//_______________________________________________________________
+
 
       });
 
