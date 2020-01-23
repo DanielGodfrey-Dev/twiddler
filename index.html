@@ -24,17 +24,28 @@
 
         var index = streams.home.length - 1;
 
+        function callTweet(tweet){
+        
+          var $tweet = $('<div class="container"></div>');
+          var $tweetUser = $('<span></span>');
+          var $tweetMessage = $('<span></span>');
+          var $tweetTime = $('<p></p>');
+
+          $tweetUser.text('@' + tweet.user + ': ');
+          $tweetMessage.text(tweet.message);
+          $tweetTime.text(tweet.created_at);
+
+          $tweet.appendTo($body);
+
+          $tweetUser.appendTo($tweet);
+          $tweetMessage.appendTo($tweet);
+          $tweetTime.appendTo($tweet);
+        }
+
         while(index >= 0){
           var tweet = streams.home[index];
+          callTweet(tweet);
           
-          var $tweet = $('<div class="container">');
-          var $tweetTime = $('<h1>');
-
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweetTime.text(tweet.created_at);
-          $tweet.appendTo($body);
-          $tweetTime.appendTo($tweet);
-
           index -= 1;
         }
 //_______________________________________________________________
@@ -46,17 +57,20 @@
         
         $tweetButton.click(function() {
           generateRandomTweet();
-          
-          var newTweet = streams.home.pop();
+          var tweet = streams.home.pop();
+          callTweet(tweet);
 
-          var $newTweet = $('<div class="container">');
-          var $newtweetTime = $('<h1>');
-
-          $newTweet.text('@' + newTweet.user + ': ' + newTweet.message);
-          $newtweetTime.text(newTweet.created_at);
-          $newTweet.appendTo($body);
-          $newtweetTime.appendTo($newTweet);
         });
+//_______________________________________________________________
+
+//________shows specific user tweets_____________________________
+
+    
+
+
+
+
+
 //_______________________________________________________________
 
 
