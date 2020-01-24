@@ -14,6 +14,7 @@
     <header>Twiddler</header>
 
     <button id="tweetButton" type="button" class="btn">Show New Tweets</button>
+    <button id="homeButton" type="button" class="btn">Return to Homescreen</button>
 
     <script>
 
@@ -63,25 +64,43 @@
         });
 //_______________________________________________________________
 
+
+
 //________shows specific user tweets_____________________________
 
     $omniscience.on('click', '.user', function(){
 
           var identity = $(this).attr("username");
-         
-          $("div[username != '" + identity + "']").hide(900);
+
+          $tweetButton.hide(100);
+          $homeButton.show(450);
+          var $filtered = $("div[username != '" + identity + "']");
+          $filtered.hide(900);
 
         });
-
-
-
-
 
 //_______________________________________________________________
 
 
-//________highlight on username mouseover________________________
 
+//________retunrs to homepage feed_______________________________
+
+        var $homeButton = $('#homeButton');
+        
+        $homeButton.click(function() {
+          
+          $('div').show(450);
+          $tweetButton.show(450);
+          $homeButton.hide(450);
+
+        });
+
+        $homeButton.hide(); //to hide from original homescreen before clicking on timelines
+//_______________________________________________________________
+
+
+
+//________highlight on username mouseover________________________
 
     $omniscience.on('mouseover', '.user', function(){
       $(this).addClass('highlight');
