@@ -69,7 +69,7 @@
 
           var identity = $(this).attr("username");
          
-          $("div[username = '" + identity + "']").hide(900);
+          $("div[username != '" + identity + "']").hide(900);
 
         });
 
