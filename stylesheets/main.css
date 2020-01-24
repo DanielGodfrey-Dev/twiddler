@@ -70,6 +70,12 @@ header {
   color: white;
 }
 
+/*
+  ========================================
+  Cursor Highlight
+  ========================================
+*/
+
 .highlight {
   text-decoration: underline;
   color: rgb(14, 237, 111);
@@ -112,31 +118,33 @@ header {
 */
 
 .container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-right: 400px;
-  margin-left: 400px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 500px;
+  margin-left: 500px;
 
   padding-left: 10px;
   padding-right: 20px;
   padding-top: 30px;
-  padding bottom: 10px;
+  padding bottom: 30px;
 
-  background-color: rgb(61, 103, 151, 0.7);
+  background-color: rgb(61, 103, 151, 0.85);
   border-top: 4px solid rgb(33, 41, 117, 0.8);
   border-right: 4px solid rgb(33, 41, 117, 0.8);
   border-left: 4px solid rgb(33, 41, 117, 0.8);
   border-bottom: 4px solid rgb(33, 41, 117, 0.8);
 
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 100;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: white;
   letter-spacing: .5px;
-  line-height: 44px;
-  padding: 40px 0 22px 0;
+  line-height: 22px;
+  padding: 20px 0 22px 0;
+
 }
+
 
 /*
   ========================================
@@ -155,4 +163,20 @@ header {
   color: white;
   display: inline-block;
   margin: 0;
+
+  cursor: pointer;
 }
+
+/*
+  ========================================
+ User's Page Title
+  ========================================
+*/
+
+.userPage {
+  font-size: 40px;
+  font-family: 'Lora', serif;
+  color: rgb(14, 237, 111);
+  padding: 10px 0 10px 0;
+}
+

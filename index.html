@@ -36,7 +36,7 @@
           $tweetMessage.text(' ' + tweet.message);
           $tweetTime.text(tweet.created_at);
 
-          $tweet.attr('username', tweet.user).appendTo($omniscience);
+          $tweet.attr('username', tweet.user).appendTo($omniscience).before($tweet);
 
           $tweetUser.appendTo($tweet);
           $tweetMessage.appendTo($tweet);
@@ -46,7 +46,7 @@
         while(index >= 0){
           var tweet = streams.home[index];
           callTweet(tweet);
-          
+
           index -= 1;
         }
 //_______________________________________________________________
@@ -60,6 +60,17 @@
           generateRandomTweet();
           var tweet = streams.home.pop();
           callTweet(tweet);
+          
+          //displays message that tweet was created, and fades
+
+          var $message = $('<p>Tweet Added @ Bottom of Page!</p>');
+          $message.appendTo($tweetButton).css("color", "rgb(14, 237, 111)").css("font-size", "18px");
+          $message.animate({
+           top: -100, opacity: 0 
+          }, 1300,"linear",
+          function() {
+          $(this).remove();
+        });
 
         });
 //_______________________________________________________________
@@ -72,10 +83,17 @@
 
           var identity = $(this).attr("username");
 
-          $tweetButton.hide(100);
+          $('.userPage').remove();
+
+          var $userPage = $('<h1 class=userPage>'+ identity +'\'s Timeline</h1>');
+          $userPage.appendTo('header');
+
+          $tweetButton.hide(450);
           $homeButton.show(450);
           var $filtered = $("div[username != '" + identity + "']");
-          $filtered.hide(900);
+          $filtered.hide(800);
+
+
 
         });
 
@@ -83,15 +101,16 @@
 
 
 
-//________retunrs to homepage feed_______________________________
+//________returns to homepage feed_______________________________
 
         var $homeButton = $('#homeButton');
         
         $homeButton.click(function() {
           
-          $('div').show(450);
+          $('div').show(300);
           $tweetButton.show(450);
           $homeButton.hide(450);
+          $('.userPage').remove();
 
         });
 
