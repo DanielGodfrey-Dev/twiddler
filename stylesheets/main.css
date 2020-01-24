@@ -70,6 +70,13 @@ header {
   color: white;
 }
 
+.highlight {
+  text-decoration: underline;
+  color: rgb(14, 237, 111);
+  cursor: pointer;
+}
+
+
 /*
   ========================================
   Page background

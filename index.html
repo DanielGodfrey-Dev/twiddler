@@ -18,7 +18,7 @@
     <script>
 
       $(document).ready(function(){
-        var $body = $('body');
+        var $omniscience = $('body');
 
 //________original batch of tweets on user homepage______________
 
@@ -27,15 +27,15 @@
         function callTweet(tweet){
         
           var $tweet = $('<div class="container"></div>');
-          var $tweetUser = $('<span></span>');
+          var $tweetUser = $('<span class="user"></span>');
           var $tweetMessage = $('<span></span>');
           var $tweetTime = $('<p></p>');
 
-          $tweetUser.text('@' + tweet.user + ': ');
-          $tweetMessage.text(tweet.message);
+          $tweetUser.text('@' + tweet.user + ':').attr('username', tweet.user);
+          $tweetMessage.text(' ' + tweet.message);
           $tweetTime.text(tweet.created_at);
 
-          $tweet.appendTo($body);
+          $tweet.attr('username', tweet.user).appendTo($omniscience);
 
           $tweetUser.appendTo($tweet);
           $tweetMessage.appendTo($tweet);
@@ -65,11 +65,31 @@
 
 //________shows specific user tweets_____________________________
 
-    
+    $omniscience.on('click', '.user', function(){
+
+          var identity = $(this).attr("username");
+         
+          $("div[username = '" + identity + "']").hide(900);
+
+        });
 
 
 
 
+
+//_______________________________________________________________
+
+
+//________highlight on username mouseover________________________
+
+
+    $omniscience.on('mouseover', '.user', function(){
+      $(this).addClass('highlight');
+    });
+
+    $omniscience.on('mouseleave', '.user', function(){
+      $(this).removeClass('highlight');
+    });
 
 //_______________________________________________________________
 
